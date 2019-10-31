@@ -2,16 +2,18 @@ import React from 'react';
 import Login from '../components/Login/Login';
 import { connect } from 'react-redux'
 
+
 import { 
     registerUser, 
     handleRegisterChanges,
     handleLoginChanges,
-    loginUser
+    loginUser,
+    logout
 } from '../actions'
 
 class LoginView extends React.Component {
-    componentDidUpdate() {
-        this.props.isLoggedIn && this.props.history.push('/user')
+    componentDidMount() {
+        this.props.logout();
     }
 
     handleRegisterChanges = e => {
@@ -22,12 +24,21 @@ class LoginView extends React.Component {
         this.props.handleLoginChanges(e)
     }
 
-    handleRegister = (e, name, username, pw1, pw2) => {
+    handleRegister = (e, newUser) => {
         e.preventDefault();
-        if (pw1 === pw2) {
-            this.props.registerUser(name, username, pw1)
-        } else {
-            alert('Passwords do not match!')
+        if (newUser.password === newUser.pw2 && newUser.password.length > 7 && newUser.username.length > 2) {
+            let regUser = {
+                ...newUser, 
+                age: parseInt(newUser.age)
+            };
+            delete regUser.pw2;
+            this.props.registerUser(regUser)
+        } else if (newUser.password !== newUser.pw2) {
+            alert('Passwords do not match!');
+        } else if (newUser.password.length < 8) {
+            alert('Password is too short!');
+        } else if (newUser.username.length < 3) {
+            alert('Username must be at least 3 characters!');
         }
     }
 
@@ -37,16 +48,19 @@ class LoginView extends React.Component {
     }
 
     render() {
-        return (
+        return ( 
             <Login 
                 history={this.props.history} 
                 isRegistering={this.props.isRegistering}
+                isLoggingIn={this.props.isLoggingIn}
                 handleRegister={this.handleRegister}
                 handleLogin={this.handleLogin}
                 handleRegisterChanges={this.handleRegisterChanges}
                 handleLoginChanges={this.handleLoginChanges}
                 newUser={this.props.newUser}
-                user={this.props.user}  
+                user={this.props.user} 
+                isLoggedIn={this.isLoggedIn} 
+                error={this.props.error}
             />
         );
     } 
@@ -54,8 +68,11 @@ class LoginView extends React.Component {
 
 const mapStateToProps = state => ({
     isRegistering: state.isRegistering,
+    isLoggingIn: state.isLoggingIn,
     newUser: state.newUser,
     user: state.user,
+    isLoggedIn: state.isLoggedIn,
+    error: state.error
 })
 
-export default connect(mapStateToProps, { registerUser, handleRegisterChanges, handleLoginChanges, loginUser })(LoginView);
+export default connect(mapStateToProps, { registerUser, handleRegisterChanges, handleLoginChanges, loginUser, logout })(LoginView);

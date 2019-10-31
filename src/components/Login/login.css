@@ -1,20 +1,67 @@
 .login-forms {
     display: flex;
-    width: 50%;
-    margin: 100px auto;
+    width: 80%;
+    margin: 50px auto;
     justify-content: space-evenly;
 }
 
 .login-forms form {
     display: flex;
     flex-direction: column;
+    width: 30%;
 }
 
 .login-forms input {
-    margin: 5px 0;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 30px;
+    padding-left: 3%;
+    box-sizing: border-box;
+}
+
+.login-forms textarea {
+    font-size: 20px;
+    width: 102%
 }
 
 .login-forms button {
     width: 100%;
-    margin-top: 10px;
+    margin: 10px auto;
+    padding: 5px 25px;
+    background: #661FFF;
+    font-size: 24px;
+    color: white;
+    border-radius: 60px;
+    border: none;
+    cursor: pointer;
 }
+
+.login-forms button:hover {
+    background: #F5A623;
+}
+
+.login-header {
+    text-align: center;
+    margin: 30px auto;
+    width: 80%;
+}
+
+.login-header img {
+    max-width: 100%;
+}
+
+.login-header h3 {
+    font-size: 30px;
+}
+
+.login-spinner {
+    text-align: center;
+}
+
+.pw-mismatch, .too-short, .error {
+    font-size: 14px;
+    color: red;
+}
+
+

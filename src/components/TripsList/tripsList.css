@@ -1,0 +1,180 @@
+.trips-list {
+    display: block;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.trips-list table {
+    width: 100%;
+}
+
+.trips-list table a {
+    vertical-align: middle;
+}
+
+.trips-list table, .trips-list th, .trips-list td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.trips-list th {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 0;
+    color: white;
+    background: #661FFF;
+    opacity: 0.75;
+}
+
+.trips-list table {
+    border: 1px solid lightgray;
+}
+
+.trips-list table img {
+    width: 100px;
+    height: 80px;
+}
+
+.trips-list tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+.trip-title {
+    color: #661FFF;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.trip-description {
+    font-weight: bold;
+}
+
+.trip-updated-at {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.view-details {
+    background: #BD10E0;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0.75;
+}
+
+.view-details:hover {
+    opacity: 1;
+}
+
+.trips-title {
+    display: block;
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.add-trip-form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid lightgray;
+    box-shadow: 3px 3px lightgray;
+    padding: 5% 20%;
+}
+
+.add-trip-form input {
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.add-trip-form select {
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 50px;
+    border: 1px solid lightgray;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.add-trip-form label {
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+    color: #661FFF;
+    opacity: 1;
+    padding-left: 3px;
+}
+
+.add-trip-form button {
+    margin: 30px 0 50px 0;
+    font-size: 20px;
+    background: #F5A623;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 5px 10px;
+    opacity: 0.5;
+    margin-bottom: 20px;
+}
+
+.add-trip-form button:hover {
+     opacity: 1;   
+}
+
+.toggler-btn {
+    width: 50%;
+    height: 50px;
+    padding-bottom: 5px;
+    border: none;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background: #BD10E0;
+    color: white;
+    font-size: 20px; 
+    font-weight: bold;
+    opacity: 0.75;
+}
+
+.toggler-btn:hover {
+    opacity: 1;
+}
+
+.please-login {
+    font-size: 40px;
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.please-login img {
+    width: 100%;
+    height: auto;
+}
+
+.login-btn button {
+    font-size: 40px;
+    margin-top: 20px;
+    border-radius: 50px;
+    border: none;
+    padding: 5px 25px;
+    background: #F5A623;
+    color: white;
+    cursor: pointer;
+}
+
+.login-btn button:hover {
+    background: rgb(70, 245, 108);
+}
+
+.no-trips {
+    padding: 30px 0;
+    font-size: 30px;
+    text-align: center;
+    border: 1px solid lightgray;
+    box-shadow: inset 0 0 10px lightgray;
+}

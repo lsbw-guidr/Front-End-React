@@ -1,0 +1,42 @@
+.main-header {
+    width: 100%;
+    background: #661FFF;
+    display: block;
+    height: 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main-header img {
+    width: 20%;
+    height: 100%;
+    margin-right: 28%;
+}
+
+.main-header a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-style: bold;
+}
+
+.trips {
+    margin-right: 30%;
+}
+
+.main-header button {
+    background: #F5A623;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 30px;
+    color: white;
+    padding: 5px 10px;
+    opacity: .75;
+}
+
+.main-header button:hover {
+    opacity: 1;
+}
+
